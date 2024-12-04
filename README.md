@@ -2,7 +2,7 @@
 **Язык программирования**: Java  
 **Выполнила**: Ильичева П.Е.
 
-##*Цель работы*
+*Цель работы*
 Изучить инструменты хранения данных, а также работу с внешними 
 файлами. 
 
@@ -22,6 +22,7 @@ if (networkInfo != null && networkInfo.isConnected()) {
 } 
 
 *Задание 2.* Изучите код приложений 
+
 HttpURLConnection 
 private String downloadUrl(String myurl) throws IOException { 
 InputStream is = null; 
