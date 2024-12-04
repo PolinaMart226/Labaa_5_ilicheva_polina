@@ -2,12 +2,13 @@
 **Язык программирования**: Java  
 **Выполнила**: Ильичева П.Е.
 
-*Цель работы*
+**Цель работы**
 Изучить инструменты хранения данных, а также работу с внешними 
 файлами. 
 
 ## Задания лабораторной работы 
-*Задание 1.*  Изучите пример подключения к сети. 
+**Задание 1.**  
+Изучите пример подключения к сети. 
 public void myClickHandler(View view) { 
 ... 
 ConnectivityManager connMgr = (ConnectivityManager) 
@@ -21,7 +22,8 @@ if (networkInfo != null && networkInfo.isConnected()) {
 ... 
 } 
 
-*Задание 2.* Изучите код приложений 
+**Задание 2.**
+Изучите код приложений 
 
 HttpURLConnection 
 private String downloadUrl(String myurl) throws IOException { 
@@ -55,7 +57,8 @@ is.close();
 } 
 }
 
-*Преобразование полученной информации к типу Srting*
+**Преобразование полученной информации к типу Srting**
+
 public String readIt (InputStream stream, int len) throws IOException, 
 UnsupportedEncodingException { 
 Reader reader = null; 
@@ -65,7 +68,8 @@ reader.read(buffer);
 return new String(buffer); 
 } 
 
-*Http GET запрос*
+**Http GET запрос**
+
  Создаем HttpClient 
 HttpClient client = new DefaultHttpClient(); 
  Создаем объект HttpGet 
@@ -82,7 +86,9 @@ e.printStackTrace();
 // TODO Auto-generated catch block 
 e.printStackTrace(); 
 } 
-*Взаимодействие с сервером через сокеты*
+
+**Взаимодействие с сервером через сокеты**
+
 public class Requester extends Thread { 
 Socket requestSocket; 
 String message; 
@@ -116,8 +122,8 @@ ee.getMessage());
 } 
 }
 
-*Задание 3.* Работа с внешними файлами.
-Само задание....
+**Задание 3.** Работа с внешними файлами.
+
 Разработать мобильное приложение, позволяющее пользователю 
 асинхронно скачивать файлы журнала Научно-технический вестник. Файлы 
 хранятся на сервере в формате PDF и расположены по адресу: 
@@ -144,7 +150,8 @@ http://ntv.ifmo.ru/file/journal/2.pdf – файл не найден, возвр
 
 
 
-*Задание 4.* Хранение и чтение настроек.
+**Задание 4.** Хранение и чтение настроек.
+
 При запуске приложения пользователю должно выводиться 
 всплывающее полупрозрачное уведомление (popupWindow), с краткой 
 инструкцией по использованию приложения (можете написать случайный 
