@@ -10,16 +10,27 @@
 **Задание 1.**  
 Изучите пример подключения к сети. 
 `public void myClickHandler(View view) { 
+
 ... 
+
 ConnectivityManager connMgr = (ConnectivityManager) 
+
 getSystemService(Context.CONNECTIVITY_SERVICE); 
+
 NetworkInfo networkInfo = connMgr.getActiveNetworkInfo(); 
+
 if (networkInfo != null && networkInfo.isConnected()) { 
+
 // fetch data 
+
 } else { 
+
 // display error 
+
 } 
+
 ... 
+
 }`
 
 **Задание 2.**
