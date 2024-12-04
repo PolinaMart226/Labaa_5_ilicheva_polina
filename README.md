@@ -10,7 +10,7 @@
 **Задание 1.**  
 Изучите пример подключения к сети. 
 
-`public void myClickHandler(View view) { 
+`public void myClickHandler(View view) {` 
 
 ... 
 
