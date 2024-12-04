@@ -37,162 +37,162 @@
 **Задание 2.**
 Изучите код приложений 
 
-`HttpURLConnection
+**HttpURLConnection**
 
-private String downloadUrl(String myurl) throws IOException { 
+`private String downloadUrl(String myurl) throws IOException {`
 
-InputStream is = null; 
+`InputStream is = null;`
 
-// Only display the first 500 characters of the retrieved 
+`// Only display the first 500 characters of the retrieved` 
 
-// web page content. 
+`// web page content.` 
 
-int len = 500; 
+`int len = 500;` 
 
-try { 
+`try {`
 
-URL url = new URL(myurl); 
+`URL url = new URL(myurl);` 
 
-HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+`HttpURLConnection conn = (HttpURLConnection) url.openConnection();`
 
-conn.setReadTimeout(10000 /* milliseconds */); 
+`conn.setReadTimeout(10000 /* milliseconds */);` 
 
-conn.setConnectTimeout(15000 /* milliseconds */); 
+`conn.setConnectTimeout(15000 /* milliseconds */);` 
 
-conn.setRequestMethod("GET"); conn.setDoInput(true);
+`conn.setRequestMethod("GET"); conn.setDoInput(true);`
 
-// Starts the query conn.connect(); 
+`// Starts the query conn.connect();` 
 
-int response = conn.getResponseCode(); 
+`int response = conn.getResponseCode();` 
 
-Log.d(DEBUG_TAG, "The response is: " + response); is = conn.getInputStream(); 
+`Log.d(DEBUG_TAG, "The response is: " + response); is = conn.getInputStream();` 
 
-// Convert the InputStream into a string 
+`// Convert the InputStream into a string` 
 
-String contentAsString = readIt(is, len); 
+`String contentAsString = readIt(is, len);` 
 
-return contentAsString; 
+`return contentAsString;` 
 
-// Makes sure that the InputStream is closed after the app is 
+`// Makes sure that the InputStream is closed after the app is` 
 
-// finished using it. 
+`// finished using it.` 
 
-} finally { 
+`} finally {`
 
-if (is != null) { 
+`if (is != null) {` 
 
-is.close(); 
+`is.close();` 
 
-} 
+`}` 
 
-} 
+`}` 
 
-}`
+`}`
 
 **Преобразование полученной информации к типу Srting**
 
-public String readIt (InputStream stream, int len) throws IOException, 
+`public String readIt (InputStream stream, int len) throws IOException,` 
 
-UnsupportedEncodingException { 
+`UnsupportedEncodingException {` 
 
-Reader reader = null; 
+`Reader reader = null; `
 
-reader = new InputStreamReader(stream, "UTF-8"); 
+`reader = new InputStreamReader(stream, "UTF-8");` 
 
-char[] buffer = new char[len]; 
+`char[] buffer = new char[len];`
 
-reader.read(buffer); 
+`reader.read(buffer);`
 
-return new String(buffer); 
+`return new String(buffer);` 
 
-} 
+`}`
 
 **Http GET запрос**
 
 - Создаем HttpClient 
 
-HttpClient client = new DefaultHttpClient(); 
+`HttpClient client = new DefaultHttpClient();` 
 
 - Создаем объект HttpGet 
 
-HttpGet request = new HttpGet("http://www.example.com"); 
+`HttpGet request = new HttpGet("http://www.example.com");` 
 
 - Выполняем HTTP запрос 
-HttpResponse response;
+`HttpResponse response;`
 
-try { 
+`try {` 
 
-response = client.execute(request); 
+`response = client.execute(request);` 
 
-Log.d("Response of GET request", response.toString()); 
+`Log.d("Response of GET request", response.toString());` 
 
-} catch (ClientProtocolException e) { 
+`} catch (ClientProtocolException e) {` 
 
-// TODO Auto-generated catch block 
+`// TODO Auto-generated catch block` 
 
-e.printStackTrace(); 
+`e.printStackTrace();` 
 
-} catch (IOException e) {
+`} catch (IOException e) {`
 
-// TODO Auto-generated catch block 
+`// TODO Auto-generated catch block` 
 
-e.printStackTrace(); 
+`e.printStackTrace();` 
 
-} 
+`}` 
 
 **Взаимодействие с сервером через сокеты**
 
-public class Requester extends Thread { 
+`public class Requester extends Thread {` 
 
-Socket requestSocket; 
+`Socket requestSocket;` 
 
-String message; 
+`String message;` 
 
-StringBuilder returnStringBuffer = new StringBuilder(); 
+`StringBuilder returnStringBuffer = new StringBuilder();` 
 
-Message lmsg; 
+`Message lmsg;` 
 
-int ch; 
+`int ch;` 
 
-@Override public void run() { 
+`@Override public void run() {` 
 
-try { 
+`try {` 
 
-this.requestSocket = new Socket("remote.servername.com",13); 
+`this.requestSocket = new Socket("remote.servername.com",13);` 
 
-InputStreamReader isr = new 
+`InputStreamReader isr = new` 
 
-InputStreamReader(this.requestSocket. getInputStream(), "ISO-8859-1"); 
+`InputStreamReader(this.requestSocket. getInputStream(), "ISO-8859-1");` 
 
-while ((this.ch = isr.read()) != -1) { 
+`while ((this.ch = isr.read()) != -1) {` 
 
-this.returnStringBuffer.append((char) this.ch); 
+`this.returnStringBuffer.append((char) this.ch);` 
 
-} 
+`}` 
 
-this.message = this.returnStringBuffer.toString(); 
+`this.message = this.returnStringBuffer.toString();` 
 
-this.lmsg = new Message(); 
+`this.lmsg = new Message();` 
 
-this.lmsg.obj = this.message; 
+`this.lmsg.obj = this.message;` 
 
-this.lmsg.what = 0; 
+`this.lmsg.what = 0;` 
 
-h.sendMessage(this.lmsg); 
+`h.sendMessage(this.lmsg);` 
 
-this.requestSocket.close(); 
+`this.requestSocket.close();` 
 
-} 
+`}` 
 
-catch (Exception ee) { 
+`catch (Exception ee) {` 
 
-Log.d("sample application", "failed to read data" + ee.getMessage()); 
+`Log.d("sample application", "failed to read data" + ee.getMessage());` 
 
-} 
+`}` 
 
-} 
+`}` 
 
-}
+`}`
 
 **Задание 3.** Работа с внешними файлами.
 
