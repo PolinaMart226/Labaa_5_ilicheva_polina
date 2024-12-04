@@ -9,7 +9,7 @@
 ## Задания лабораторной работы 
 **Задание 1.**  
 Изучите пример подключения к сети. 
-public void myClickHandler(View view) { 
+`public void myClickHandler(View view) { 
 ... 
 ConnectivityManager connMgr = (ConnectivityManager) 
 getSystemService(Context.CONNECTIVITY_SERVICE); 
@@ -20,7 +20,7 @@ if (networkInfo != null && networkInfo.isConnected()) {
 // display error 
 } 
 ... 
-} 
+}`
 
 **Задание 2.**
 Изучите код приложений 
