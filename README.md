@@ -9,6 +9,7 @@
 ## Задания лабораторной работы 
 **Задание 1.**  
 Изучите пример подключения к сети. 
+
 `public void myClickHandler(View view) { 
 
 ... 
@@ -36,7 +37,7 @@ if (networkInfo != null && networkInfo.isConnected()) {
 **Задание 2.**
 Изучите код приложений 
 
-`HttpURLConnection 
+**`HttpURLConnection** 
 
 private String downloadUrl(String myurl) throws IOException { 
 
@@ -118,15 +119,15 @@ return new String(buffer);
 
 **Http GET запрос**
 
- Создаем HttpClient 
+- Создаем HttpClient 
 
 HttpClient client = new DefaultHttpClient(); 
 
- Создаем объект HttpGet 
+- Создаем объект HttpGet 
 
 HttpGet request = new HttpGet("http://www.example.com"); 
 
- Выполняем HTTP запрос 
+- Выполняем HTTP запрос 
 HttpResponse response;
 
 try { 
@@ -152,36 +153,61 @@ e.printStackTrace();
 **Взаимодействие с сервером через сокеты**
 
 public class Requester extends Thread { 
+
 Socket requestSocket; 
+
 String message; 
+
 StringBuilder returnStringBuffer = new StringBuilder(); 
+
 Message lmsg; 
+
 int ch; 
+
 @Override public void run() { 
+
 try { 
-this.requestSocket = new Socket("remote.servername.com", 
-13); 
+
+this.requestSocket = new Socket("remote.servername.com",13); 
+
 InputStreamReader 
+
 isr 
+
 = 
+
 new 
-InputStreamReader(this.requestSocket. getInputStream(), "ISO-8859- 
-1"); 
+
+InputStreamReader(this.requestSocket. getInputStream(), "ISO-8859- 1"); 
+
 while ((this.ch = isr.read()) != -1) { 
+
 this.returnStringBuffer.append((char) this.ch); 
+
 } 
+
 this.message = this.returnStringBuffer.toString(); 
+
 this.lmsg = new Message(); 
+
 this.lmsg.obj = this.message; 
+
 this.lmsg.what = 0; 
+
 h.sendMessage(this.lmsg); 
+
 this.requestSocket.close(); 
+
 } 
+
 catch (Exception ee) { 
-Log.d("sample application", "failed to read data" + 
-ee.getMessage()); 
+
+Log.d("sample application", "failed to read data" + ee.getMessage()); 
+
 } 
+
 } 
+
 }
 
 **Задание 3.** Работа с внешними файлами.
