@@ -12,27 +12,27 @@
 
 `public void myClickHandler(View view) {` 
 
-... 
+`...` 
 
-ConnectivityManager connMgr = (ConnectivityManager) 
+`ConnectivityManager connMgr = (ConnectivityManager)` 
 
-getSystemService(Context.CONNECTIVITY_SERVICE); 
+`getSystemService(Context.CONNECTIVITY_SERVICE);` 
 
-NetworkInfo networkInfo = connMgr.getActiveNetworkInfo(); 
+`NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();`
 
-if (networkInfo != null && networkInfo.isConnected()) { 
+`if (networkInfo != null && networkInfo.isConnected()) {`
 
-// fetch data 
+`// fetch data` 
 
-} else { 
+`} else {`
 
-// display error 
+`// display error` 
 
-} 
+`}`
 
-... 
+`...` 
 
-}`
+`}`
 
 **Задание 2.**
 Изучите код приложений 
