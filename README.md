@@ -25,19 +25,32 @@ if (networkInfo != null && networkInfo.isConnected()) {
 **Задание 2.**
 Изучите код приложений 
 
-HttpURLConnection 
+`HttpURLConnection 
+
 private String downloadUrl(String myurl) throws IOException { 
+
 InputStream is = null; 
+
 // Only display the first 500 characters of the retrieved 
+
 // web page content. 
+
 int len = 500; 
+
 try { 
+
 URL url = new URL(myurl); 
+
 HttpURLConnection 
+
 url.openConnection(); 
+
 conn 
+
 = 
+
 (HttpURLConnection) 
+
 conn.setReadTimeout(10000 /* milliseconds */); 
 conn.setConnectTimeout(15000 /* milliseconds */); 
 conn.setRequestMethod("GET"); conn.setDoInput(true); 
@@ -55,7 +68,7 @@ if (is != null) {
 is.close(); 
 } 
 } 
-}
+}`
 
 **Преобразование полученной информации к типу Srting**
 
